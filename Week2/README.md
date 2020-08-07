@@ -41,18 +41,18 @@ NetworkManager.request("api 주소가 들어갈 부분",method: .GET) { (data, _
     import pandas as pd
 
     app = Flask(__name__) 
-    ```
-
-
+    
+    
     @app.route('/') # 예시. 127.0.0.1:5000/ 접속 시 화면에 Hello World 텍스트
     def hello():
         return "Hello World!"
     
+      
     @app.route('/info') # 예시. 127.0.0.1:5000/info 접속 시 화면에 info 텍스트
     def info():
         return 'Info'
-
-
+      
+      
     @app.route('/data', methods = ['GET']) # 클라 기준 데이터 전송하는 곳
     def userLogin():
         print("python flask server")
@@ -62,19 +62,19 @@ NetworkManager.request("api 주소가 들어갈 부분",method: .GET) { (data, _
         print(obj)
         return "str"
         #TODO: - C기능을 위해 데이터베이스에 저장
-
-
+        
+        
     @app.route('/adsf', methods = ['POST']) # iOS에서 넘어오는 자기소개서 문장을 받는곳
     def test():
         print(request.get_json())
-
-
+        
+    
     if __name__ == '__main__': # 현재 파일명이 main.py 인지
         app.run()
+    ​```
     ```
-
-
-​    
+    
+    ​    
 
 ## 자연어 처리 
 
@@ -91,15 +91,15 @@ NetworkManager.request("api 주소가 들어갈 부분",method: .GET) { (data, _
 - 설치 과정 
     -> Pycharm Terminal Console 사용해 설치
     1. mecab 설치
-    ```console
+    ```bash
     bash <(curl -s https://raw.githubusercontent.com/konlpy/konlpy/master/scripts/mecab.sh)
     ```
     2. konlpy 설치
-    ```console
+    ```bash
     pip install -q konlpy
     ```
     3. pandas 설치 
-    ```console
+    ```bash
     pip install pandas
     ```
     
