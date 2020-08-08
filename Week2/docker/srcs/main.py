@@ -3,7 +3,7 @@ from konlpy.tag import Mecab
 app = Flask(__name__)
 
 
-@app.route('/data', methods=['POST'])  # 클라 기준 데이터 전송하는 곳
+@app.route('/data', methods=['POST'])
 def user_input():
     print("python flask server")
     content = request.get_json()

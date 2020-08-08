@@ -18,14 +18,15 @@ class NetworkManager {
     static let session: URLSession = URLSession.shared
     
 	static func request(_ url: String, method: HttpMethod, body: Data? = nil, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
-        guard let url = URL(string: url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!) else { return }
+        guard let url = URL(string: url) else { return }
+		
 		var request = URLRequest(url: url)
+		request.httpMethod = method.rawValue
 		if let body = body {
 			request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
 			request.httpBody = body
 		}
         
-        request.httpMethod = method.rawValue
 		session.dataTask(with: request, completionHandler: completion).resume()
 	}
 }
