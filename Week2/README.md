@@ -1,5 +1,11 @@
 # 2주차 릴레이 프로젝트 [ I 💗 School ]
 
+A 기능 - 자연어 처리: 사용자 정보 추출 (자기소개 문장에서 출신 학교, 이름, 지역, 성별 등의 단어를 추출한다.)
+
+구현: iOS 앱, 자연어 처리, 서버 구축
+
+
+
 ## iOS
 
 * NetworkManager 클래스로 네트워크 요청 부분을 분리해주었습니다.
@@ -7,13 +13,21 @@
 ```swift
 static func request(_ url: String, method: HttpMethod, body: Data? = nil, completion: @escaping (Data?, URLResponse?, Error?) -> ())
 ```
-* 사용예시
+* **저장** button 클릭시 호출되는 함수
 ```swift
-NetworkManager.request("api 주소가 들어갈 부분",method: .GET) { (data, _, _) in
-    guard let data = data else { return }
-    // 응답값을 사용할 부분
+@IBAction func send() {
+	let msg = Message(text: textView.text ?? "")
+	let json = try! JSONEncoder().encode(msg)
+
+	NetworkManager.request("http://localhost:5000/data",method: .POST, body: json ) { (data, _, _) in
+		guard let data = data else { return }
+		let nouns = try! JSONDecoder().decode(Array<String>.self, from: data)
+		print(nouns)
+	}
 }
 ```
+
+
 
 ## 백엔드
 
@@ -53,7 +67,7 @@ NetworkManager.request("api 주소가 들어갈 부분",method: .GET) { (data, _
         return 'Info'
       
       
-    @app.route('/data', methods = ['GET']) # 클라 기준 데이터 전송하는 곳
+    @app.route('/login', methods = ['GET']) # 클라 기준 데이터 전송하는 곳
     def userLogin():
         print("python flask server")
         str = request.args.get('str',"test") # iOS에서 보낸 문자열을 str 변수로 받음
@@ -63,11 +77,13 @@ NetworkManager.request("api 주소가 들어갈 부분",method: .GET) { (data, _
         return "str"
         #TODO: - C기능을 위해 데이터베이스에 저장
         
-        
-    @app.route('/adsf', methods = ['POST']) # iOS에서 넘어오는 자기소개서 문장을 받는곳
-    def test():
-        print(request.get_json())
-        
+    
+    @app.route('/data', methods=['POST']) # iOS에서 넘어오는 자기소개서 문장을 받는곳
+    def user_input():
+        content = request.get_json()
+        obj = get_tokens(content['text'])
+        return jsonify(obj)
+      
     
     if __name__ == '__main__': # 현재 파일명이 main.py 인지
         app.run()
@@ -105,6 +121,31 @@ NetworkManager.request("api 주소가 들어갈 부분",method: .GET) { (data, _
     
 - 입출력 데이터 타입
 = 문자열 (String) -> 배열 (Array)
+  
+  ```python
+  import pandas as pd
+  from konlpy.tag import Mecab
+  
+  def get_tokens(x):
+      mecab = Mecab()
+      try:
+          return [i for i in mecab.nouns(x) if len(i) > 1] if x else []
+      except Exception as e:
+          if str(x) == 'nan':
+              return []
+          raise e
+  
+  
+  def getNonunsData():
+      df = pd.read_csv('../../Desktop/RelayA/dummy_users.tsv', sep='\t')
+      df['user_mecab'] = df['user.description'].map(get_tokens)
+      df['user_mecab_len'] = df['user_mecab'].map(len)
+      return df
+  
+  # print(getNonunsData().head())
+  ```
+  
+  
   
 - 입출력 예시
     ```python
