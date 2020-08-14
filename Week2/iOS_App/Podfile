@@ -1,0 +1,6 @@
+platform :ios, '13.6'
+use_frameworks!
+target 'Relay22' do
+ pod 'Alamofire', '~> 5.2.2'
+ pod 'SwiftyJSON'
+end

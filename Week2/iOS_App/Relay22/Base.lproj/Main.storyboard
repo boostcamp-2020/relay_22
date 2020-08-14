@@ -61,6 +61,14 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main" translatesAutoresizingMaskIntoConstraints="NO" id="0F2-7l-era">
                                 <rect key="frame" x="30" y="60" width="315" height="133.5"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nSY-SQ-oVr">
+                                <rect key="frame" x="264" y="599" width="95" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="내얼굴 등록하기"/>
+                                <connections>
+                                    <segue destination="OLj-co-BM8" kind="show" id="bz2-Ug-lBo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -86,6 +94,67 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-521" y="-23"/>
+        </scene>
+        <!--Grey To Color View Controller-->
+        <scene sceneID="E1z-FY-E48">
+            <objects>
+                <viewController id="OLj-co-BM8" customClass="GreyToColorViewController" customModule="Relay22" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dUn-LU-bXb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZe-PR-03K">
+                                <rect key="frame" x="153" y="567" width="69" height="30"/>
+                                <state key="normal" title="컬러로 변경"/>
+                                <connections>
+                                    <action selector="onClick:" destination="OLj-co-BM8" eventType="touchUpInside" id="o66-NA-ana"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wu2-at-vHg">
+                                <rect key="frame" x="0.0" y="8" width="375" height="375"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhv-m2-gMn">
+                                <rect key="frame" x="50" y="567" width="78" height="30"/>
+                                <state key="normal" title="사진가져오기"/>
+                                <connections>
+                                    <action selector="setOriginalImage" destination="OLj-co-BM8" eventType="touchUpInside" id="67z-FT-XhD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k99-ID-AmX">
+                                <rect key="frame" x="269" y="567" width="56" height="30"/>
+                                <state key="normal" title="얼굴 추출"/>
+                                <connections>
+                                    <action selector="setFaceImageOnly" destination="OLj-co-BM8" eventType="touchUpInside" id="BYq-bP-KcJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="317-Fx-dvy" firstAttribute="bottom" secondItem="k99-ID-AmX" secondAttribute="bottom" constant="100" id="1xP-pJ-urF"/>
+                            <constraint firstItem="wu2-at-vHg" firstAttribute="centerX" secondItem="317-Fx-dvy" secondAttribute="centerX" id="3d0-E8-3cX"/>
+                            <constraint firstItem="317-Fx-dvy" firstAttribute="trailing" secondItem="k99-ID-AmX" secondAttribute="trailing" constant="50" id="8QF-sk-pJ2"/>
+                            <constraint firstItem="uhv-m2-gMn" firstAttribute="leading" secondItem="317-Fx-dvy" secondAttribute="leading" constant="50" id="Bgq-ey-KfZ"/>
+                            <constraint firstItem="wu2-at-vHg" firstAttribute="centerX" secondItem="317-Fx-dvy" secondAttribute="centerX" id="C70-Ln-grs"/>
+                            <constraint firstItem="317-Fx-dvy" firstAttribute="bottom" secondItem="kZe-PR-03K" secondAttribute="bottom" constant="50" id="LBJ-wR-rlo"/>
+                            <constraint firstItem="317-Fx-dvy" firstAttribute="bottom" secondItem="uhv-m2-gMn" secondAttribute="bottom" constant="50" id="OfU-0o-Nqx"/>
+                            <constraint firstItem="kZe-PR-03K" firstAttribute="centerX" secondItem="dUn-LU-bXb" secondAttribute="centerX" id="UVO-7O-KfB"/>
+                            <constraint firstItem="wu2-at-vHg" firstAttribute="centerY" secondItem="317-Fx-dvy" secondAttribute="centerY" id="cnj-Px-RsK"/>
+                            <constraint firstItem="wu2-at-vHg" firstAttribute="centerY" secondItem="317-Fx-dvy" secondAttribute="centerY" id="rB0-hw-tmv"/>
+                            <constraint firstItem="317-Fx-dvy" firstAttribute="bottom" secondItem="k99-ID-AmX" secondAttribute="bottom" constant="50" id="u3B-hl-LcO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="317-Fx-dvy"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="oAX-Uo-P47"/>
+                    <connections>
+                        <outlet property="extractFaceButton" destination="k99-ID-AmX" id="JtB-As-xvw"/>
+                        <outlet property="imageView" destination="wu2-at-vHg" id="cJp-ph-7D6"/>
+                        <outlet property="photoButton" destination="uhv-m2-gMn" id="E26-iB-TfN"/>
+                        <outlet property="uploadImage" destination="kZe-PR-03K" id="FnN-0r-Xpp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6kN-Kx-rLS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="263.19999999999999" y="-31.03448275862069"/>
         </scene>
     </scenes>
     <resources>

@@ -1,0 +1,3 @@
+${PODS_ROOT}/Target Support Files/Pods-Relay22/Pods-Relay22-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework
