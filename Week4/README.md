@@ -41,7 +41,7 @@ S061 최철웅
 
 ---
 
-![3](https://user-images.githubusercontent.com/62557093/90868994-93c4b180-e3d2-11ea-9911-3ecc4ac44172.gif)
+<img src=“https://user-images.githubusercontent.com/62557093/90868994-93c4b180-e3d2-11ea-9911-3ecc4ac44172.gif” width=“50%” />
 ---
 
 ## API
