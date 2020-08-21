@@ -18,7 +18,9 @@
 		79D07C177F6BAA554315EF65 /* Pods_Relay22.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4262CB13FA7AAE67B80C341 /* Pods_Relay22.framework */; };
 		F7C9353824E6663F00D249D7 /* GreyToColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C9353724E6663F00D249D7 /* GreyToColorViewController.swift */; };
 		F7C9353A24E6690100D249D7 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = F7C9353924E6690100D249D7 /* Podfile */; };
-		F7C9353C24E66D3300D249D7 /* greyImage.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = F7C9353B24E66D3300D249D7 /* greyImage.jpeg */; };
+		FAC79FE424EF8E8C00F397EA /* RecommandController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC79FE324EF8E8C00F397EA /* RecommandController.swift */; };
+		FAC79FE624EF8F1200F397EA /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC79FE524EF8F1200F397EA /* Friend.swift */; };
+		FAC79FE824EF986000F397EA /* CustomCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC79FE724EF986000F397EA /* CustomCellTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +39,9 @@
 		E4262CB13FA7AAE67B80C341 /* Pods_Relay22.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Relay22.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7C9353724E6663F00D249D7 /* GreyToColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreyToColorViewController.swift; sourceTree = "<group>"; };
 		F7C9353924E6690100D249D7 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		F7C9353B24E66D3300D249D7 /* greyImage.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = greyImage.jpeg; path = ../../../../../../Downloads/greyImage.jpeg; sourceTree = "<group>"; };
+		FAC79FE324EF8E8C00F397EA /* RecommandController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommandController.swift; sourceTree = "<group>"; };
+		FAC79FE524EF8F1200F397EA /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		FAC79FE724EF986000F397EA /* CustomCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,14 +86,16 @@
 		4CA2DD4024DD1DDF005CC76A /* Relay22 */ = {
 			isa = PBXGroup;
 			children = (
-				F7C9353B24E66D3300D249D7 /* greyImage.jpeg */,
 				4CA2DD4124DD1DDF005CC76A /* AppDelegate.swift */,
 				4CA2DD4A24DD1DE9005CC76A /* Assets.xcassets */,
 				44C7D06F24DD45D500A15957 /* BorderButton.swift */,
 				4CA2DD4F24DD1DE9005CC76A /* Info.plist */,
 				4CA2DD4C24DD1DE9005CC76A /* LaunchScreen.storyboard */,
 				4CA2DD4724DD1DDF005CC76A /* Main.storyboard */,
+				FAC79FE324EF8E8C00F397EA /* RecommandController.swift */,
 				4CA2DD5524DD2F89005CC76A /* NetworkManager.swift */,
+				FAC79FE724EF986000F397EA /* CustomCellTableViewCell.swift */,
+				FAC79FE524EF8F1200F397EA /* Friend.swift */,
 				4CA2DD4324DD1DDF005CC76A /* SceneDelegate.swift */,
 				4CA2DD4524DD1DDF005CC76A /* ViewController.swift */,
 				F7C9353724E6663F00D249D7 /* GreyToColorViewController.swift */,
@@ -167,7 +173,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CA2DD4E24DD1DE9005CC76A /* LaunchScreen.storyboard in Resources */,
-				F7C9353C24E66D3300D249D7 /* greyImage.jpeg in Resources */,
 				4CA2DD4B24DD1DE9005CC76A /* Assets.xcassets in Resources */,
 				4CA2DD4924DD1DDF005CC76A /* Main.storyboard in Resources */,
 				F7C9353A24E6690100D249D7 /* Podfile in Resources */,
@@ -226,9 +231,12 @@
 				4CA2DD4624DD1DDF005CC76A /* ViewController.swift in Sources */,
 				4CA2DD4224DD1DDF005CC76A /* AppDelegate.swift in Sources */,
 				F7C9353824E6663F00D249D7 /* GreyToColorViewController.swift in Sources */,
+				FAC79FE424EF8E8C00F397EA /* RecommandController.swift in Sources */,
 				4CA2DD5624DD2F89005CC76A /* NetworkManager.swift in Sources */,
+				FAC79FE824EF986000F397EA /* CustomCellTableViewCell.swift in Sources */,
 				4CA2DD4424DD1DDF005CC76A /* SceneDelegate.swift in Sources */,
 				44C7D07024DD45D500A15957 /* BorderButton.swift in Sources */,
+				FAC79FE624EF8F1200F397EA /* Friend.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
